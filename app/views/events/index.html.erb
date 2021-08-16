@@ -24,15 +24,25 @@
           </div>
         </div>
         <footer class="card-footer">
-          <div class="card-footer-item">
-            <%= link_to 'Show', event, class:"button is-success" %>
-          </div>
-          <div class="card-footer-item">
-            <%= link_to 'Edit', edit_event_path(event), class:"button is-success" %>
-          </div>
-          <div class="card-footer-item">
-            <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class:"button is-danger" %>
-          </div>
+          <% if user_signed_in? %>
+            <% if current_user.id == event.user_id %>
+              <div class="card-footer-item">
+                <%= link_to 'Show', event, class:"button is-success" %>
+              </div>
+              <div class="card-footer-item">
+                <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class:"button is-danger" %>
+              </div>
+            <% else %>
+              <div class="card-footer-item">
+                <%= link_to 'Show', event, class:"button is-success" %>
+              </div>
+            <% end %>
+          <% else %>
+            <div class="card-footer-item">
+              <%= link_to 'Show', event, class:"button is-success" %>
+            </div>
+          <% end %>
+          
         </footer>
       </div>
     <% end %>
@@ -62,15 +72,24 @@
           </div>
         </div>
         <footer class="card-footer">
-          <div class="card-footer-item">
-            <%= link_to 'Show', event, class:"button is-success" %>
-          </div>
-          <div class="card-footer-item">
-            <%= link_to 'Edit', edit_event_path(event), class:"button is-success" %>
-          </div>
-          <div class="card-footer-item">
-            <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class:"button is-danger" %>
-          </div>
+          <% if user_signed_in? %>
+            <% if current_user.id == event.user_id %>
+              <div class="card-footer-item">
+                <%= link_to 'Show Event', event, class:"button is-success" %>
+              </div>
+              <div class="card-footer-item">
+                <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class:"button is-danger" %>
+              </div>
+            <% else %>
+              <div class="card-footer-item">
+                <%= link_to 'Show Event', event, class:"button is-success" %>
+              </div>
+            <% end %>
+          <% else %>
+            <div class="card-footer-item">
+              <%= link_to 'Show', event, class:"button is-success" %>
+            </div>
+          <% end %>
         </footer>
       </div>
     <% end %>
