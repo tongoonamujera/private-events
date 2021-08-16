@@ -9,7 +9,7 @@
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
-
+#rubocop:disable all
 ActiveRecord::Schema.define(version: 2021_08_15_155405) do
 
   create_table 'attendances', force: :cascade do |t|
