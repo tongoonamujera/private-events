@@ -12,11 +12,13 @@
         <div class="card-content">
           <div class="content">
             <% @event.attendees.each do |attendee|%>
-              <strong><%= attendee.username %></strong><br/>
+              <p class="has-text-centered">
+                <strong><%= attendee.username.capitalize %></strong>
+              </p>
             <% end %>
           </div>
         </div>
-        <footer class="card-footer">
+        <footer class="card-footer has-background-grey">
           <% if current_user.id == @event.user_id %>
             <div class="card-footer-item">
               <%= link_to 'Edit', edit_event_path(@event), class:"button is-success" %>
@@ -44,12 +46,14 @@
         </div>
         <div class="card-content">
           <div class="content">
-          <% @event.attendees.each do |attendee|%>
-            <strong><%= attendee.username.capitalize %></strong>
-          <% end %>
+            <% @event.attendees.each do |attendee|%>
+              <p class="has-text-centered">
+                <strong><%= attendee.username.capitalize %></strong>
+              </p>
+            <% end %>
           </div>
         </div>
-        <footer class="card-footer">
+        <footer class="card-footer has-background-grey">
           <div class="card-footer-item">
             <%= link_to 'Back', events_path, class:"button is-dark" %>
           </div>
