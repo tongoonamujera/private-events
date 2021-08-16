@@ -1,5 +1,5 @@
 class AttendancesController < ApplicationController
-  before_action :set_attendance, only: %i[ show edit update destroy ]
+  before_action :set_attendance, only: %i[show edit update destroy]
 
   # GET /attendances or /attendances.json
   def index
@@ -8,6 +8,7 @@ class AttendancesController < ApplicationController
 
   # GET /attendances/1 or /attendances/1.json
   def show
+    # null
   end
 
   # GET /attendances/new
@@ -18,6 +19,7 @@ class AttendancesController < ApplicationController
 
   # GET /attendances/1/edit
   def edit
+    # null
   end
 
   # POST /attendances or /attendances.json
@@ -31,7 +33,7 @@ class AttendancesController < ApplicationController
 
     # respond_to do |format|
     #   if @attendance.save
-    #     format.html { redirect_to @attendance, notice: "Attendance was successfully created." }
+    #     format.html { redirect_to @attendance, notice: 'Attendance was successfully created.' }
     #     format.json { render :show, status: :created, location: @attendance }
     #   else
     #     format.html { render :new, status: :unprocessable_entity }
@@ -44,7 +46,7 @@ class AttendancesController < ApplicationController
   def update
     respond_to do |format|
       if @attendance.update(attendance_params)
-        format.html { redirect_to @attendance, notice: "Attendance was successfully updated." }
+        format.html { redirect_to @attendance, notice: 'Attendance was successfully updated.' }
         format.json { render :show, status: :ok, location: @attendance }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -57,7 +59,7 @@ class AttendancesController < ApplicationController
   def destroy
     @attendance.destroy
     respond_to do |format|
-      format.html { redirect_to attendances_url, notice: "Attendance was successfully destroyed." }
+      format.html { redirect_to attendances_url, notice: 'Attendance was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

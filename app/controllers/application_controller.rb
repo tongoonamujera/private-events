@@ -5,9 +5,9 @@ class ApplicationController < ActionController::Base
 
   protected
 
+#rubocop:disable all
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:username, :image, :email, :password) }
-#rubocop:disable all
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:username, :image, :email, :password, :current_password)}
   end
 end
