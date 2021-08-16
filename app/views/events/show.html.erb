@@ -2,7 +2,7 @@
 
 <% unless @event.date < Date.today %>
   <div class="columns is-centered">
-    <div class="column is-7">
+    <div class="column is-6">
       <div class="card my-3">
         <div class="card-header has-background-dark">
           <p class="has-text-white has-text-centered has-text-weight-bold is-size-5">
@@ -35,10 +35,12 @@
   </div>
 <% else %>
   <div class="columns is-centered">
-    <div class="column is-7">
-      <div class="card">
-        <div class="card-header">
-          The event was attended by the following people
+    <div class="column is-6">
+      <div class="card my-3">
+        <div class="card-header has-background-dark">
+          <p class="has-text-white has-text-centered has-text-weight-bold is-size-5">
+            The event was attended by the following people
+          </p>
         </div>
         <div class="card-content">
           <div class="content">
