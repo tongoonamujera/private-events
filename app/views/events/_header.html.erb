@@ -62,17 +62,19 @@
   <!-- Hero content: will be in the middle -->
   <div class="hero-body">
     <div class="container has-text-centered">
-        <p>
+      <p>
         Hello 
         <% if user_signed_in? %>
           <%= current_user.username.capitalize %>
         <% else %>
           <span>Guest User</span>
         <% end %>
-        </p>
-      <p class="subtitle">
-        <%= link_to "Create A New Event", new_event_path, class:"button is-light" %>
       </p>
+      <% if user_signed_in? %>
+        <p class="subtitle">
+          <%= link_to "Create A New Event", new_event_path, class:"button is-light" %>
+        </p>
+      <% end %>
     </div>
   </div>
 </section>
