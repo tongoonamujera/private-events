@@ -1,4 +1,4 @@
-#!/usr/bin/env 
+#!/usr/bin/env ruby
 #rubocop:disable all
 begin
   load File.expand_path('../spring', __FILE__)
