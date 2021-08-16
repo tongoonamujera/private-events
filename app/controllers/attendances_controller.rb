@@ -24,7 +24,6 @@ class AttendancesController < ApplicationController
 
   # POST /attendances or /attendances.json
   def create
-
     @attendance = Attendance.new(event_id: params[:id], user_id: current_user.id)
     @attendance.save
     redirect_to events_path
