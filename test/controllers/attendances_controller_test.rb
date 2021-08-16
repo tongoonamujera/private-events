@@ -14,7 +14,7 @@ class AttendancesControllerTest < ActionDispatch::IntegrationTest
     get new_attendance_url
     assert_response :success
   end
-
+#rubocop:disable all
   test 'should create attendance' do
     assert_difference('Attendance.count') do
       post attendances_url, params: { attendance: { event_id: @attendance.event_id, user_id: @attendance.user_id } }
