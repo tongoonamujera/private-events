@@ -14,7 +14,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
     get new_event_url
     assert_response :success
   end
-
+#rubocop:disable all
   test 'should create event' do
     assert_difference('Event.count') do
       post events_url, params: { event: { date: @event.date, description: @event.description, location: @event.location, title: @event.title, user_id: @event.user_id } }
