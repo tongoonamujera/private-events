@@ -1,6 +1,8 @@
 # MEMBERS-ONLY
 > In this project, I will build an application that allows users to create posts and the authors of the posts are displayed only if as a User you are logged in. The main goal is to setup devise gem for authentication
 ## Project Screenshot
+# Login page
+![loginpage](https://user-images.githubusercontent.com/69446259/129594526-35e2bfd1-8474-4945-ba4b-35fbe6e88b31.png)
 # Before login
 ![beforelogin](https://user-images.githubusercontent.com/69446259/129594161-ddefeda1-bc0a-4281-9d03-25c8e09dda21.png)
 ## Built With
