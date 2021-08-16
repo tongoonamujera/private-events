@@ -12,7 +12,8 @@ class AttendancesController < ApplicationController
 
   # GET /attendances/new
   def new
-    @attendance = Attendance.new
+    # @attendance = Attendance.new
+    @attendance = Attendance.new(event_id: params[:id], user_id: current_user.id)
   end
 
   # GET /attendances/1/edit
@@ -21,17 +22,22 @@ class AttendancesController < ApplicationController
 
   # POST /attendances or /attendances.json
   def create
-    @attendance = Attendance.new(attendance_params)
 
-    respond_to do |format|
-      if @attendance.save
-        format.html { redirect_to @attendance, notice: "Attendance was successfully created." }
-        format.json { render :show, status: :created, location: @attendance }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @attendance.errors, status: :unprocessable_entity }
-      end
-    end
+    @attendance = Attendance.new(event_id: params[:id], user_id: current_user.id)
+    @attendance.save
+    redirect_to events_path
+
+    # @attendance = Attendance.new(attendance_params)
+
+    # respond_to do |format|
+    #   if @attendance.save
+    #     format.html { redirect_to @attendance, notice: "Attendance was successfully created." }
+    #     format.json { render :show, status: :created, location: @attendance }
+    #   else
+    #     format.html { render :new, status: :unprocessable_entity }
+    #     format.json { render json: @attendance.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /attendances/1 or /attendances/1.json

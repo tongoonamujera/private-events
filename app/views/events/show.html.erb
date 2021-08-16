@@ -24,6 +24,7 @@
   <strong>User:</strong>
   <%= @event.user_id %>
 </p>
+<%= event_registration_button(@event)%>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
