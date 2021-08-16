@@ -5,9 +5,13 @@
     <h1 class="has-text-centered is-size-4">Past events </h1>
     <% @events.past_events.each do |event| %>
       <div class="card my-5">
-        <div class="card-header">
-          <%= event.title %><br/>
-          Created by: <%= event.user.username %> At: <%= event.created_at %>
+        <div class="has-background-dark">
+          <p class="has-text-white has-text-centered">
+            <%= event.title.upcase %>
+          </p>
+          <p class="has-text-white has-text-centered">
+            Created by: <%= event.user.username %>
+          </p>
         </div>
         <div class="card-content">
           <div class="content">
@@ -23,23 +27,23 @@
             </p>
           </div>
         </div>
-        <footer class="card-footer">
+        <footer class="card-footer has-background-grey">
           <% if user_signed_in? %>
             <% if current_user.id == event.user_id %>
               <div class="card-footer-item">
-                <%= link_to 'Show', event, class:"button is-success" %>
+                <%= link_to 'Show Event', event, class:"button is-success" %>
               </div>
               <div class="card-footer-item">
                 <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class:"button is-danger" %>
               </div>
             <% else %>
               <div class="card-footer-item">
-                <%= link_to 'Show', event, class:"button is-success" %>
+                <%= link_to 'Show Event', event, class:"button is-success" %>
               </div>
             <% end %>
           <% else %>
             <div class="card-footer-item">
-              <%= link_to 'Show', event, class:"button is-success" %>
+              <%= link_to 'Show Event', event, class:"button is-success" %>
             </div>
           <% end %>
           
@@ -52,9 +56,13 @@
   <h1 class="has-text-centered is-size-4">Upcoming Events </h1>
     <% @events.coming_events.each do |event| %>
       <div class="card my-5">
-        <div class="card-header">
-          <%= event.title %><br>
-          Created by: <%= event.user.username %> At: <%= event.created_at %>
+        <div class="has-background-dark">
+          <p class="has-text-white has-text-centered">
+            <%= event.title.upcase %>
+          </p>
+          <p class="has-text-white has-text-centered">
+            Created by: <%= event.user.username %>
+          </p>
         </div>
         <div class="card-content">
           <div class="content">
@@ -71,7 +79,7 @@
             <%= event_registration_button(event) %>
           </div>
         </div>
-        <footer class="card-footer">
+        <footer class="card-footer has-background-grey">
           <% if user_signed_in? %>
             <% if current_user.id == event.user_id %>
               <div class="card-footer-item">
