@@ -76,7 +76,9 @@
             <p>
               <strong>Location</strong>:<%= event.location %>
             </p>
-            <%= event_registration_button(event) %>
+            <% if user_signed_in? %>
+              <%= event_registration_button(event) %>
+            <% end %>
           </div>
         </div>
         <footer class="card-footer has-background-grey">
